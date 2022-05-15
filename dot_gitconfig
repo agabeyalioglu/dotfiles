@@ -211,3 +211,6 @@
 	program = gpg
 [tag]
 	gpgSign = true
+	
+[pull]
+	rebase = true
