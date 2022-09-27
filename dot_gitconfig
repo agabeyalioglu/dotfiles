@@ -101,6 +101,7 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
+	autocrlf = input
 
 [color]
 
@@ -165,7 +166,7 @@
 [merge]
 
 	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+	log = false
 
 [push]
 
@@ -202,7 +203,7 @@
 
 [user]
 
-	name = Agabey Alioglu
+	name = Ağabey Alioğlu
 	email = agabey.alioglu@commencis.com
 	signingkey = B1DFEA24
 
@@ -210,7 +211,6 @@
 
 	program = gpg
 [tag]
-	gpgSign = true
-	
+	gpgSign = false
 [pull]
 	rebase = true
