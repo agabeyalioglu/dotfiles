@@ -42,6 +42,14 @@ macos-option-as-alt = true
 # Notify when long-running commands finish in background
 notify-on-command-finish = unfocused
 
+# Clipboard
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+
+# Splits
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+
 # Shell integration
 shell-integration = detect
 
