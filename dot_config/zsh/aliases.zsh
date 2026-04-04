@@ -38,7 +38,6 @@ alias grep='rg'
 
 # vim → neovim
 alias vim="nvim"
-alias vi="nvim"
 
 # cat → bat
 alias cat="bat"
