@@ -1,5 +1,12 @@
 README.md
 LICENSE
+Makefile
+
+# macOS only
+{{ if ne .chezmoi.os "darwin" }}
+run_onchange_after_macos-defaults.sh
+.Brewfile
+{{ end }}
 
 # OMC state data
 .omc/

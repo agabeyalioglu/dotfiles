@@ -33,3 +33,6 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh --shims)"
+
+# fzf-git keybindings (Ctrl-G prefix)
+[[ -f ~/.config/zsh/fzf-git.sh ]] && source ~/.config/zsh/fzf-git.sh
