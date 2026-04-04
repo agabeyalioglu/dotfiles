@@ -1,9 +1,33 @@
 README.md
 LICENSE
 
-# OMC / Claude session data
+# OMC state data
 .omc/
-.claude/
+
+# Claude bulk data — exclude everything except config files
+.claude/projects/
+.claude/cache/
+.claude/history.jsonl
+.claude/__store.db
+.claude/paste-cache/
+.claude/backups/
+.claude/debug/
+.claude/file-history/
+.claude/session-env/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/tasks/
+.claude/telemetry/
+.claude/agents/
+.claude/skills/
+.claude/plugins/
+.claude/plans/
+.claude/read-once/
+.claude/hud/
+.claude/ide/
+.claude/teams/
+.claude/config/
 
 # Secrets — never commit
 dot_netrc
