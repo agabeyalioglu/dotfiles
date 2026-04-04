@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-# Make vim the default editor.
-export EDITOR='vim';
+# Make neovim the default editor.
+export EDITOR='nvim';
 
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 

@@ -36,6 +36,10 @@ alias lt="eza --tree --level=2 --icons --git-ignore"
 # grep → ripgrep
 alias grep='rg'
 
+# vim → neovim
+alias vim="nvim"
+alias vi="nvim"
+
 # cat → bat
 alias cat="bat"
 
