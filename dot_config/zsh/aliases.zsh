@@ -17,6 +17,7 @@ alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 
 # Shortcuts
+alias cheat="bat ~/.config/cheatsheet.md"
 alias c="clear"
 alias g="git"
 alias reload="exec ${SHELL} -l"
