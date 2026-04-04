@@ -3,7 +3,6 @@
 	email = agabeyalioglu@gmail.com
 [http]
 	postBuffer = 524288000
-	cookiefile = ~/Documents/cookiefile.txt
 [core]
 	autocrlf = input
 	pager = delta
