@@ -44,8 +44,9 @@ alias du="dust"
 # top → btop
 alias top="btop"
 
-# lazygit
+# lazygit / lazydocker
 alias lg="lazygit"
+alias lzd="lazydocker"
 
 # sudo-aware aliases
 alias sudo='sudo '
