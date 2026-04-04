@@ -7,6 +7,8 @@
 	autocrlf = input
 	pager = delta
 	excludesfile = ~/.gitignore_global
+	untrackedCache = true
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [interactive]
 	diffFilter = delta --color-only
@@ -16,12 +18,45 @@
 	side-by-side = true
 	line-numbers = true
 	syntax-theme = gruvbox-dark
+	hyperlinks = true
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 [diff]
 	colorMoved = default
+
+[status]
+	showUntrackedFiles = all
+
+[transfer]
+	fsckobjects = true
+
+[fetch]
+	fsckobjects = true
+	prune = true
+
+[receive]
+	fsckobjects = true
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+
+[help]
+	autocorrect = 15
+
+[alias]
+	amend = commit --amend --reuse-message=HEAD
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S\"$1\"; }; f"
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=\"$1\"; }; f"
+	whoami = config user.email
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "https://github.com/"
 
 [init]
 	defaultBranch = main

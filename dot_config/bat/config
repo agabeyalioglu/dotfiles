@@ -1,0 +1,5 @@
+--theme="gruvbox-dark"
+--style="numbers,changes,header"
+--paging=auto
+--map-syntax "*.conf:INI"
+--map-syntax ".gitignore:Git Ignore"
