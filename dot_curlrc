@@ -1,8 +1,12 @@
-# Disguise as IE 9 on Windows 7.
-user-agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
+# Follow redirects
+location
 
-# When following a redirect, automatically set the previous URL as referer.
-referer = ";auto"
+# Show errors but stay silent on success
+silent
+show-error
 
-# Wait 60 seconds before timing out.
-connect-timeout = 60
+# Compressed transfers
+compressed
+
+# Don't use cached DNS (avoids stale results)
+dns-servers 1.1.1.1,8.8.8.8
