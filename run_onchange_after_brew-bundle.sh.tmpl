@@ -1,0 +1,8 @@
+#!/bin/bash
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+
+set -e
+
+echo "Brewfile changed — running brew bundle..."
+brew bundle --file="$HOME/.Brewfile" --no-lock
+echo "brew bundle complete."

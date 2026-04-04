@@ -31,6 +31,7 @@ alias ll="eza -alh --git --group-directories-first --icons"
 alias l="eza -lh --icons"
 alias la="eza -a --icons"
 alias lsd="eza -D --icons"
+alias lt="eza --tree --level=2 --icons --git-ignore"
 
 # grep → ripgrep
 alias grep='rg'

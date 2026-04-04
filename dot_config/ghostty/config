@@ -39,6 +39,9 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 macos-option-as-alt = true
 
+# Notify when long-running commands finish in background
+notify-on-command-finish = unfocused
+
 # Shell integration
 shell-integration = detect
 
