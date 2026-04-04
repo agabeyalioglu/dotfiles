@@ -49,6 +49,16 @@ alias top="btop"
 alias lg="lazygit"
 alias lzd="lazydocker"
 
+# sed → sd
+alias sed='sd'
+
+# curl → xh
+alias http='xh'
+alias https='xh --https'
+
+# ps → procs
+alias ps='procs'
+
 # sudo-aware aliases
 alias sudo='sudo '
 
