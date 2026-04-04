@@ -2,6 +2,7 @@ brew "xz"
 brew "bat"
 brew "btop"
 brew "chezmoi"
+brew "claude-code"
 brew "cocoapods"
 brew "colima", restart_service: :changed
 brew "coreutils"

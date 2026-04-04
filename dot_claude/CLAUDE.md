@@ -78,6 +78,15 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 - For non-trivial changes: pause and ask "is there a more elegant way?" Skip this for obvious fixes.
 - After completing non-trivial features (3+ files changed), run `/deep-review` before merging.
 
+### Tooling
+
+- **Runtimes**: `mise` (not nvm/pyenv/rbenv). **Python packages**: `uv` (not pip).
+- **Dotfiles**: managed by chezmoi. Edit source at `~/.local/share/chezmoi/`, not `~/` directly.
+- **Docker**: runs via colima (not Docker Desktop). `colima start` before docker commands.
+- **CLI replacements**: bat(cat), rg(grep), sd(sed), fd(find), procs(ps), eza(ls), dust(du), btop(top), xh(curl), delta(diff).
+- **direnv** is active. Use `.envrc` for project env vars. Prefer over manual `source .env`.
+- **Git**: pull rebases by default, autoStash enabled. Use `gh` for GitHub ops. `pci` to init pre-commit in any repo.
+
 ### Frontend (all projects)
 
 - Server Components by default — only add `"use client"` when the component needs hooks, state, or browser APIs.

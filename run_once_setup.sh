@@ -25,4 +25,10 @@ mkdir -p ~/.local/bin
 # Enable git maintenance globally
 git maintenance start 2>/dev/null || true
 
+# Install oh-my-claudecode plugin
+if command -v claude &>/dev/null; then
+    echo "Installing oh-my-claudecode..."
+    claude install oh-my-claudecode
+fi
+
 echo "One-time setup complete."
