@@ -45,9 +45,11 @@ alias du="dust"
 # top → btop
 alias top="btop"
 
-# lazygit / lazydocker
+# lazygit / lazydocker / tmuxinator
 alias lg="lazygit"
 alias lzd="lazydocker"
+alias mux="tmuxinator"
+alias commence="tmuxinator start commence"
 
 # sed → sd
 alias sed='sd'
