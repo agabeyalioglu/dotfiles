@@ -157,6 +157,13 @@ function push() {
 	git push origin HEAD:refs/for/$input
 }
 
+# Init pre-commit in current repo with default config
+function pci() {
+	cp ~/.config/pre-commit/default-config.yaml .pre-commit-config.yaml
+	pre-commit install
+	echo "pre-commit initialized with default config"
+}
+
 # Empty the Trash on all mounted volumes and the main HDD
 function emptytrash() {
 	sudo rm -rfv /Volumes/*/.Trashes
