@@ -1,5 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Load Node global installed binaries
 export PATH="$HOME/.node/bin:$PATH"
 
@@ -10,13 +8,13 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$PATH"
 
 # Prioritize brew binaries over system
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Use gnu-sed as sed
-PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Make sure coreutils are loaded before system commands
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
 export PATH="$HOME/.maestro/bin:$PATH"
 
