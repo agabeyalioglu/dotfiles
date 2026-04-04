@@ -1,2 +1,11 @@
 README.md
 LICENSE
+
+# OMC / Claude session data
+.omc/
+.claude/
+
+# Secrets — never commit
+dot_netrc
+dot_pypirc
+dot_ssh/id_*
