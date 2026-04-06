@@ -10,9 +10,9 @@ echo "Applying macOS defaults..."
 # Disable press-and-hold for keys (enable key repeat)
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Fastest key repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-# Shortest delay before repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+# Delay before repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
 # Full keyboard access for all UI controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 

@@ -39,9 +39,6 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 macos-option-as-alt = true
 
-# Notify when long-running commands finish in background
-notify-on-command-finish = unfocused
-
 # Clipboard
 clipboard-trim-trailing-spaces = true
 clipboard-paste-protection = true

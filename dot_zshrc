@@ -10,6 +10,9 @@ else
   compinit -i
 fi
 
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Plugins
 source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
