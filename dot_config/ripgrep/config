@@ -1,5 +1,10 @@
 --smart-case
 --max-columns=150
 --max-columns-preview
+--field-match-separator=
 --hidden
 --glob=!.git/*
+--glob=!package-lock.json
+--glob=!pnpm-lock.yaml
+--glob=!yarn.lock
+--glob=!uv.lock

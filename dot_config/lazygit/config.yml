@@ -1,0 +1,43 @@
+gui:
+  sidePanelWidth: 0.25
+  expandFocusedSidePanel: true
+  nerdFontsVersion: "3"
+  showRandomTip: false
+  showCommandLog: false
+  theme:
+    activeBorderColor:
+      - magenta
+      - bold
+    inactiveBorderColor:
+      - white
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - white
+    selectedLineBgColor:
+      - "#453461"
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    markedBaseCommitBgColor:
+      - yellow
+    markedBaseCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - white
+    defaultFgColor:
+      - default
+git:
+  parseEmoji: true
+  commit:
+    autoWrapCommitMessage: true
+    autoWrapWidth: 72
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+os:
+  copyToClipboardCmd: "pbcopy < {{text}}"
+  editPreset: "nvim"
+  open: "open {{filename}}"
