@@ -1,4 +1,4 @@
-font-family = "HackNerdFontMono"
+font-family = "Hack Nerd Font Mono"
 
 font-style-bold = "Medium"
 font-style-bold-italic = "Medium Italic"
@@ -6,7 +6,6 @@ font-size = 13.4
 font-thicken = true
 grapheme-width-method = "unicode"
 
-adjust-cell-width = -5%
 palette = 0=#212733
 palette = 1=#f08778
 palette = 2=#53bf97
@@ -56,7 +55,7 @@ unfocused-split-opacity = 0.7
 # Window
 window-theme = auto
 confirm-close-surface = false
-minimum-contrast = 1.1
+minimum-contrast = 1.5
 
 # Selection
 copy-on-select = clipboard

@@ -40,6 +40,10 @@ out/
 .next/
 .nuxt/
 
+# Claude Code / OMC
+.omc/
+.claude/settings.local.json
+
 # OS
 Thumbs.db
 Desktop.ini

@@ -72,6 +72,15 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 - Use subagents for research, exploration, and parallel work. One task per subagent. Keep main context clean.
 - After ANY correction (user, code review, failing test), add to the relevant CLAUDE.md pitfalls section immediately.
 
+### TDD (Mandatory)
+
+- **Always TDD**: Write failing test first (red), minimal implementation to pass (green), refactor. No exceptions.
+- **Vertical slices**: One test → one implementation → repeat. NEVER write all tests first then all code (horizontal slicing).
+- **Test behavior, not implementation**: Tests use public interfaces only. If a test breaks on refactor but behavior hasn't changed, it's a bad test.
+- **Mock only at system boundaries**: External APIs, databases, time/randomness. Never mock your own modules or internal collaborators.
+- **When briefing subagents**: Explicitly instruct them to write tests FIRST, verify they fail, THEN implement. Include this in every agent prompt.
+- **Reference**: Full TDD methodology lives in `/tdd` skill. Use `/feature-dev` for feature work (has TDD built into Phase 5).
+
 ### Verification
 
 - Never mark a task complete without proving it works.
@@ -90,3 +99,18 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 ### Frontend (all projects)
 
 - Server Components by default — only add `"use client"` when the component needs hooks, state, or browser APIs.
+
+### Personal vault (~/vault)
+
+I maintain a personal productivity vault at `~/vault`. You have access to it via the `obsidian-vault` MCP server (filesystem-backed, always available) from any Claude Code session.
+
+- **Files:** `commitments/*.md` (one per stakeholder, source of truth for what I owe), `daily/YYYY-MM-DD.md` (daily notes), `_meta/hot-cache.md` (short-term memory, rewritten on `/eod`), `inbox/` (unsorted captures), `projects/`, `someday/`.
+- **SessionStart hook** injects `_meta/hot-cache.md` — you already know overdue items and open threads at session start.
+- **Slash commands:** `/morning` (briefing + inbox triage) and `/eod` (sweep + hot-cache rewrite). Both at `~/.claude/commands/`.
+- **Full conventions:** `~/vault/CLAUDE.md` — read it before writing to the vault.
+- **Rules:** never delete commitments without asking; never invent commitments; dates always absolute (YYYY-MM-DD); `/eod` is the only place that rewrites `_meta/hot-cache.md`.
+- **Context etiquette:** in non-vault sessions (coding work etc.), acknowledge vault context exists but don't act on it unless I say so.
+
+@RTK.md
+
+

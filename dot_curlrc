@@ -7,6 +7,3 @@ show-error
 
 # Compressed transfers
 compressed
-
-# Don't use cached DNS (avoids stale results)
-dns-servers 1.1.1.1,8.8.8.8
