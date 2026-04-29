@@ -33,6 +33,10 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+# Faster .dmg mounting (skip checksum verification)
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # --- Dock ---
 defaults write com.apple.dock autohide-delay -float 0
@@ -62,6 +66,7 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # --- Locale ---
 defaults write -g AppleLocale -string "en_US"
+defaults write -g AppleTemperatureUnit -string "Celsius"
 
 # --- Input sources: US (default), Turkish-QWERTY, Japanese (Kotoeri) ---
 defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
@@ -122,6 +127,22 @@ defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 0
 # Force Click (global)
 defaults write -g com.apple.trackpad.forceClick -bool true
 
+# --- Menu bar ---
+defaults write com.apple.controlcenter BatteryShowPercentage -bool true
+
+# --- Activity Monitor ---
+defaults write com.apple.ActivityMonitor OpenMainWindowOnLaunch -bool true
+defaults write com.apple.ActivityMonitor IconType -int 5            # CPU history in dock icon
+defaults write com.apple.ActivityMonitor ShowCategory -int 0        # all processes
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0       # descending
+
+# --- Software Update ---
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1    # daily
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
 # --- Misc app UX ---
 # No "Are you sure you want to open this?" prompt for downloaded apps
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -139,6 +160,9 @@ defaults write com.apple.screencapture type -string "png"
 # --- Security ---
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+# Firewall + stealth mode (sudo)
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 
 # --- Energy (requires sudo; -b flags are no-ops on desktop Macs) ---
 sudo pmset -a lidwake 1

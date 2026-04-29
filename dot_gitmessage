@@ -1,0 +1,29 @@
+
+
+# <type>(<scope>): <subject>                                  # 50 chars max
+#
+# <body>                                                      # 72 chars per line
+# Explain WHY, not WHAT (the diff shows what).
+# - Why was this change necessary?
+# - How does it solve the problem?
+# - Any side effects worth noting?
+#
+# <footer>
+# Refs: #123
+# Co-authored-by: Name <email@example.com>
+#
+# --
+# Types:
+#   feat      new feature
+#   fix       bug fix
+#   docs      documentation only
+#   style     formatting, missing semicolons, etc; no code change
+#   refactor  code change that neither fixes a bug nor adds a feature
+#   perf      performance improvement
+#   test      adding or fixing tests
+#   build     build system, dependencies
+#   ci        CI configuration
+#   chore     other (no production code change)
+#
+# Append `!` after type or scope for breaking changes:
+#   feat(auth)!: drop legacy session cookies
