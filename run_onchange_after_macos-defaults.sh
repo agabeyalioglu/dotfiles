@@ -40,6 +40,19 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
+# --- Hot corners ---
+# Values: 0 disabled, 2 Mission Control, 3 App windows, 4 Desktop, 5 Start screen saver,
+#         6 Disable screen saver, 10 Display sleep, 11 Launchpad, 12 Notification Center,
+#         13 Lock Screen, 14 Quick Note
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 14
+defaults write com.apple.dock wvous-br-modifier -int 0
+
 # --- Window management ---
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -109,6 +122,16 @@ defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 0
 # Force Click (global)
 defaults write -g com.apple.trackpad.forceClick -bool true
 
+# --- Misc app UX ---
+# No "Are you sure you want to open this?" prompt for downloaded apps
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Don't auto-launch Photos when an iPhone/camera is plugged in
+defaults write com.apple.ImageCapture disableHotPlug -bool true
+# TextEdit defaults to plain text (UTF-8), not RTF
+defaults write com.apple.TextEdit RichText -int 0
+defaults write com.apple.TextEdit PlainTextEncoding -string "UTF-8"
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -string "UTF-8"
+
 # --- Screenshots ---
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture type -string "png"
@@ -116,6 +139,15 @@ defaults write com.apple.screencapture type -string "png"
 # --- Security ---
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# --- Energy (requires sudo; -b flags are no-ops on desktop Macs) ---
+sudo pmset -a lidwake 1
+sudo pmset -a autorestart 1
+sudo pmset -a displaysleep 15
+sudo pmset -c sleep 0
+sudo pmset -b sleep 5 2>/dev/null || true
+sudo pmset -b standbydelay 86400 2>/dev/null || true
+sudo pmset -b hibernatemode 25 2>/dev/null || true
 
 # Restart affected apps
 killall Finder 2>/dev/null || true
