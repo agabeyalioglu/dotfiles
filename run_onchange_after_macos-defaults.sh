@@ -47,6 +47,53 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
+# --- Mouse (Magic Mouse, wired/Bluetooth) ---
+for domain in com.apple.AppleMultitouchMouse com.apple.driver.AppleBluetoothMultitouch.mouse; do
+    defaults write "$domain" MouseButtonMode -string "TwoButton"
+    defaults write "$domain" MouseButtonDivision -int 55
+    defaults write "$domain" MouseHorizontalScroll -int 1
+    defaults write "$domain" MouseVerticalScroll -int 1
+    defaults write "$domain" MouseMomentumScroll -int 1
+    defaults write "$domain" MouseOneFingerDoubleTapGesture -int 1
+    defaults write "$domain" MouseTwoFingerDoubleTapGesture -int 3
+    defaults write "$domain" MouseTwoFingerHorizSwipeGesture -int 2
+done
+
+# --- Trackpad (built-in + Magic Trackpad) ---
+for domain in com.apple.AppleMultitouchTrackpad com.apple.driver.AppleBluetoothMultitouch.trackpad; do
+    defaults write "$domain" Clicking -int 0
+    defaults write "$domain" Dragging -int 0
+    defaults write "$domain" DragLock -int 0
+    defaults write "$domain" TrackpadHandResting -int 1
+    defaults write "$domain" TrackpadScroll -int 1
+    defaults write "$domain" TrackpadHorizScroll -int 1
+    defaults write "$domain" TrackpadMomentumScroll -int 1
+    defaults write "$domain" TrackpadPinch -int 1
+    defaults write "$domain" TrackpadRotate -int 1
+    defaults write "$domain" TrackpadRightClick -int 1
+    defaults write "$domain" TrackpadCornerSecondaryClick -int 0
+    defaults write "$domain" TrackpadThreeFingerDrag -int 0
+    defaults write "$domain" TrackpadThreeFingerTapGesture -int 0
+    defaults write "$domain" TrackpadThreeFingerHorizSwipeGesture -int 2
+    defaults write "$domain" TrackpadThreeFingerVertSwipeGesture -int 2
+    defaults write "$domain" TrackpadFourFingerHorizSwipeGesture -int 2
+    defaults write "$domain" TrackpadFourFingerVertSwipeGesture -int 2
+    defaults write "$domain" TrackpadFourFingerPinchGesture -int 2
+    defaults write "$domain" TrackpadFiveFingerPinchGesture -int 2
+    defaults write "$domain" TrackpadTwoFingerDoubleTapGesture -int 1
+    defaults write "$domain" TrackpadTwoFingerFromRightEdgeSwipeGesture -int 3
+    defaults write "$domain" USBMouseStopsTrackpad -int 0
+done
+
+# Built-in trackpad-only (Force Touch detents, click thresholds)
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 1
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 1
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 0
+
+# Force Click (global)
+defaults write -g com.apple.trackpad.forceClick -bool true
+
 # --- Screenshots ---
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture type -string "png"
