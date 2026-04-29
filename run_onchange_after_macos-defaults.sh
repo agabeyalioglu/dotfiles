@@ -47,6 +47,21 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
+# --- Locale ---
+defaults write -g AppleLocale -string "en_US"
+
+# --- Input sources: US (default), Turkish-QWERTY, Japanese (Kotoeri) ---
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
+    '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 0; "KeyboardLayout Name" = "U.S."; }' \
+    '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = -36; "KeyboardLayout Name" = "Turkish-QWERTY-PC"; }' \
+    '{ "Bundle ID" = "com.apple.inputmethod.Kotoeri"; "Input Mode" = "com.apple.inputmethod.Japanese"; InputSourceKind = "Input Mode"; }' \
+    '{ "Bundle ID" = "com.apple.PressAndHold"; InputSourceKind = "Non Keyboard Input Method"; }' \
+    '{ "Bundle ID" = "com.apple.CharacterPaletteIM"; InputSourceKind = "Non Keyboard Input Method"; }'
+
+# Default to US on first login
+defaults write com.apple.HIToolbox AppleSelectedInputSources -array \
+    '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 0; "KeyboardLayout Name" = "U.S."; }'
+
 # --- Mouse (Magic Mouse, wired/Bluetooth) ---
 for domain in com.apple.AppleMultitouchMouse com.apple.driver.AppleBluetoothMultitouch.mouse; do
     defaults write "$domain" MouseButtonMode -string "TwoButton"
