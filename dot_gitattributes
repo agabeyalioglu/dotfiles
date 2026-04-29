@@ -1,0 +1,57 @@
+# Auto-detect text files, normalize to LF in repo
+* text=auto eol=lf
+
+# Source code (always LF)
+*.sh    text eol=lf
+*.zsh   text eol=lf
+*.bash  text eol=lf
+*.py    text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.jsx   text eol=lf
+*.go    text eol=lf
+*.rs    text eol=lf
+*.swift text eol=lf
+*.kt    text eol=lf
+*.java  text eol=lf
+*.rb    text eol=lf
+*.lua   text eol=lf
+*.toml  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+
+# Windows-only — preserve CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binaries (no diff/merge attempts, no line-ending munging)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.heic binary
+*.pdf  binary
+*.zip  binary
+*.gz   binary
+*.tar  binary
+*.7z   binary
+*.dmg  binary
+*.exe  binary
+*.so   binary
+*.dylib binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+*.mp3   binary
+*.mp4   binary
+*.mov   binary
+*.wav   binary
+*.flac  binary

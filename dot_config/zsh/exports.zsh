@@ -16,15 +16,21 @@ export NODE_REPL_MODE='sloppy';
 export PYTHONIOENCODING='UTF-8';
 
 # History
-export HISTSIZE='32768'
-export HISTFILESIZE="${HISTSIZE}"
-export HISTCONTROL='ignoreboth'
+export HISTSIZE=32768
+export SAVEHIST=$HISTSIZE
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt SHARE_HISTORY
 
+# Locale
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
+# Don't phone home from brew
+export HOMEBREW_NO_ANALYTICS=1
+
 # Man pages with syntax highlighting via bat
-export MANPAGER="sh -c ‘col -bx | bat -l man -p’";
+export MANPAGER="sh -c 'col -bx | bat -l man -p'";
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
