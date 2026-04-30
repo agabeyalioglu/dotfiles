@@ -168,7 +168,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 sudo pmset -a lidwake 1
 sudo pmset -a autorestart 1
 sudo pmset -a displaysleep 15
-sudo pmset -c sleep 0
+sudo pmset -c sleep 60
 sudo pmset -b sleep 5 2>/dev/null || true
 sudo pmset -b standbydelay 86400 2>/dev/null || true
 sudo pmset -b hibernatemode 25 2>/dev/null || true
